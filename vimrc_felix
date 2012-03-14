@@ -4,7 +4,7 @@ if &term == "xterm"
 	let &t_Co=256
 	colorscheme molokai
 elseif (&term == "builtin_gui") || (&term == "win32")
-	colorscheme eclipse
+	colorscheme molokai
 elseif &term =~ "vt10."
 	colorscheme elflord
 endif
