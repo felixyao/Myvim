@@ -1,0 +1,42 @@
+"Appearance Settings
+"let we use 256 colors
+if &term == "xterm" 
+	let &t_Co=256
+	colorscheme molokai
+elseif (&term == "builtin_gui") || (&term == "win32")
+	colorscheme eclipse
+elseif &term =~ "vt10."
+	colorscheme elflord
+endif
+
+if has("gui")
+set guioptions-=T
+set guioptions-=m
+set guifont=Courier\ 10\ Pitch\ 16
+endif 
+
+set nu
+set hlsearch
+set ruler 
+
+
+
+" Add windows style keymappings
+" source $VIMRUNTIME/mswin.vim
+
+"Tab Indent highlighting Settings
+set nocompatible 
+syntax on
+filetype on
+filetype plugin on
+filetype indent on
+
+" add cscope.out if it exist
+if filereadable("./cscope.out") 
+	cscope add cscope.out
+endif
+
+" use quickfix for cscope"
+set cscopequickfix =s-,c-,d-,i-,t-,e-
+
+"I don't need the enconding setting because only english would be used
