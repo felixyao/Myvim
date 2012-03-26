@@ -22,7 +22,9 @@ set ruler
 
 
 " Add windows style keymappings
-" source $VIMRUNTIME/mswin.vim
+if &term == "win32"
+ source $VIMRUNTIME/mswin.vim
+endif
 
 "Tab Indent highlighting Settings
 set nocompatible 
@@ -32,8 +34,10 @@ filetype plugin on
 filetype indent on
 
 " add cscope.out if it exist
+if &term != "win32"
 if filereadable("./cscope.out") 
 	cscope add cscope.out
+endif
 endif
 
 " use quickfix for cscope"
